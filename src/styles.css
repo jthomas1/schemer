@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  transition: 0.3s;
+}
+
+.colour-code {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 4rem;
+  transition: 0.3s;
+}
