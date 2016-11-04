@@ -1,5 +1,11 @@
+.app-colour {
+    flex: 1;
+}
+
 .colour-container {
+  cursor: pointer;
   height: 100%;
+  padding: 0 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,6 +14,7 @@
 }
 
 .colour-code {
+  cursor: text;
   font-family: 'Cutive Mono', monospace;
   font-size: 4rem;
   transition: 0.3s;
