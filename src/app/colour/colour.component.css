@@ -1,0 +1,14 @@
+.colour-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.colour-code {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 4rem;
+  transition: 0.3s;
+}

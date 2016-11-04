@@ -1,3 +1,5 @@
-<p>
-  colour works!
-</p>
+<div class="colour-container" (click)="changeColour()" [style.background-color]="hexString">
+  <p class="colour-code" [style.color]="textColour">
+    {{hexString}}
+  </p>
+</div>
