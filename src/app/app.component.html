@@ -1,4 +1,13 @@
 <main>
-    <app-colour class="flex-1"></app-colour>
-    <app-colour class="flex-1"></app-colour>
+
+    <div *ngFor="let colour of colours" class="colour-container" [style.background-color]="colour.hexString">
+      <p class="colour-code" [style.color]="colour.textColour">
+        {{colour.hexString}}
+      </p>
+      <span class="change-colour-btn" (click)="colour.changeColour()" [style.color]="colour.textColour">Change</span>
+    </div>
+
+    <!--<app-colour class="flex-1"></app-colour>
+    <app-colour class="flex-1"></app-colour>-->
+    <span class="add-new-btn" (click)="addNew()">+</span>
 </main>

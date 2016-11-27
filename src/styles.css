@@ -1,10 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
 }
 
 main {
@@ -16,4 +16,39 @@ main {
 
 .flex-1 {
   flex: 1;
+}
+
+.add-new-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.app-colour {
+    flex: 1;
+}
+
+.colour-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.colour-code {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 4rem;
+  transition: 0.3s;
+}
+
+.change-colour-btn {
+    cursor: pointer;
 }

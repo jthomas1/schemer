@@ -1,5 +1,6 @@
-<div class="colour-container" (click)="changeColour()" [style.background-color]="hexString">
+<div class="colour-container" [style.background-color]="hexString">
   <p class="colour-code" [style.color]="textColour">
-    {{hexString}}
+    {{colour.hexString}}
   </p>
+  <span class="change-colour-btn" (click)="changeColour()" [style.color]="textColour">Change</span>
 </div>

@@ -2,20 +2,22 @@
     flex: 1;
 }
 
-.colour-container {
-  cursor: pointer;
+.colour-container {  
   height: 100%;
   padding: 0 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
 }
 
 .colour-code {
-  cursor: text;
   font-family: 'Cutive Mono', monospace;
   font-size: 4rem;
   transition: 0.3s;
+}
+
+.change-colour-btn {
+    cursor: pointer;
 }

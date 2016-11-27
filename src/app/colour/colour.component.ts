@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 import { ColourService } from './colour.service';
 
-@Component({
+/*@Component({
   selector: 'app-colour',
   templateUrl: './colour.component.html',
   styleUrls: ['./colour.component.css'],
   providers: [ColourService]
-})
-export class ColourComponent implements OnInit {
+})*/
 
-  constructor(private colourService: ColourService) { }
+export class ColourComponent {
 
   hexString: String;
   textColour: String;
 
-  ngOnInit() {
+  constructor(private colourService: ColourService) {
     this.hexString = this.colourService.getRandomHex();
     this.setTextColour();
   }
