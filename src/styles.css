@@ -44,11 +44,14 @@ main {
 }
 
 .colour-code {
+  margin: 20px;
   font-family: 'Cutive Mono', monospace;
-  font-size: 4rem;
+  font-size: 3rem;
   transition: 0.3s;
 }
 
-.change-colour-btn {
-    cursor: pointer;
+.colour-btn {
+  font-size: 1.5rem;
+   cursor: pointer;
+  margin:  0 5px;
 }

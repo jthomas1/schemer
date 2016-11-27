@@ -12,15 +12,22 @@ export class ColourComponent {
 
   hexString: String;
   textColour: String;
+  locked: Boolean;
+  unlockBtnTitle: String;
 
   constructor(private colourService: ColourService) {
     this.hexString = this.colourService.getRandomHex();
     this.setTextColour();
+    this.locked = false;
+    this.unlockBtnTitle = "Lock";
+    this.toggleLockTitle();
   }
 
   changeColour(event): void {
-    this.hexString = this.colourService.getRandomHex();
-    this.setTextColour();
+    if (!this.locked) {
+      this.hexString = this.colourService.getRandomHex();
+      this.setTextColour();
+    }
   }
 
   setTextColour(): void {
@@ -33,4 +40,16 @@ export class ColourComponent {
     }
   }
 
+  toggleLock() : void {
+    this.locked = !this.locked;
+    this.toggleLockTitle();
+  }
+
+  toggleLockTitle() : void {
+    if (this.locked) {
+      this.unlockBtnTitle = "Unlock";
+    } else {
+      this.unlockBtnTitle = "Lock";
+    }
+  }
 }
