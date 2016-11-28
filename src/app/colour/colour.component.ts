@@ -23,6 +23,10 @@ export class ColourComponent {
     this.toggleLockTitle();
   }
 
+  hexNoHash(): String {
+    return this.hexString.substring(1);
+  }
+
   changeColour(event): void {
     if (!this.locked) {
       this.hexString = this.colourService.getRandomHex();

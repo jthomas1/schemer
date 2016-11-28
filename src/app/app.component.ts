@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColourComponent } from './colour/colour.component';
+import { ColourSlidersComponent } from './colour-sliders/colour-sliders.component';
 import { ColourService } from './colour/colour.service';
 
 @Component({

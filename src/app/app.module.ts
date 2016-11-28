@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ColourSlidersComponent } from './colour-sliders/colour-sliders.component';
 //import { ColourComponent } from './colour/colour.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ColourSlidersComponent
   ],
   imports: [
     BrowserModule,

@@ -5,11 +5,11 @@ export class ColourService {
 
   constructor() { }
 
-  private getRandom(min, max): Number {
+  getRandom(min, max): Number {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  private hex2rgb(hex): Number[] {
+  hex2rgb(hex): Number[] {
     var rgbHex = [
         hex.slice(0, 2),
         hex.slice(2, 4),
@@ -26,12 +26,12 @@ export class ColourService {
     return rgbDec;
   }
 
-  private dec2Hex(dec): String {
+  dec2Hex(dec): String {
     var hex = dec.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
   }
 
-  private rgb2hex(r, g, b): String {
+  rgb2hex(r, g, b): String {
     return '#' + this.dec2Hex(r) + this.dec2Hex(g) + this.dec2Hex(b);
   }
 
