@@ -34,6 +34,11 @@ export class ColourComponent {
     }
   }
 
+  setColourFromRgb(event): void {
+    let rgb = event.newRgb;
+    this.hexString = this.colourService.rgb2hex(rgb[0], rgb[1], rgb[2]);
+  }
+
   setTextColour(): void {
     let brightness = this.colourService.getBrightness(this.hexString);
 

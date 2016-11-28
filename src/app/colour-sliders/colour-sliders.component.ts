@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ColourService } from '../colour/colour.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { ColourService } from '../colour/colour.service';
 export class ColourSlidersComponent implements OnInit {
 
   currentColour: String = '';
+
+  @Output() rgbUpdated = new EventEmitter();
 
   @Input()
   set setColour(colour : String) {
@@ -23,6 +25,13 @@ export class ColourSlidersComponent implements OnInit {
 
   ngOnInit() {
     this.rgb = this.colourService.hex2rgb(this.currentColour);
+  }
+
+  updateRgb(): void {
+    console.log('update rgb called');
+    this.rgbUpdated.emit({
+      newRgb: this.rgb
+    });
   }
 
 }

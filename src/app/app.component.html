@@ -10,5 +10,5 @@
     <colour-sliders [setColour]="colour.hexString" [style.color]="colour.textColour"></colour-sliders>
   </div>
 
-  <span title="Add new colour" class="add-new-btn" (click)="addNew()">+</span>
+  <span title="Add new colour" class="add-new-btn" (click)="addNew()" (rgbUpdated)="colour.setColourFromRgb($event)">+</span>
 </main>
