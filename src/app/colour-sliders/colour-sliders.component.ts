@@ -27,8 +27,22 @@ export class ColourSlidersComponent implements OnInit {
     this.rgb = this.colourService.hex2rgb(this.currentColour);
   }
 
+  updateR(event): void {
+    this.rgb[0] = parseInt(event.target.value);
+    this.updateRgb();
+  }
+
+  updateG(event): void {
+    this.rgb[1] = parseInt(event.target.value);
+    this.updateRgb();
+  }
+
+  updateB(event): void {
+    this.rgb[2] = parseInt(event.target.value);
+    this.updateRgb();
+  }
+
   updateRgb(): void {
-    console.log('update rgb called');
     this.rgbUpdated.emit({
       newRgb: this.rgb
     });

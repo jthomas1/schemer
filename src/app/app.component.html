@@ -7,8 +7,8 @@
       <i title="Randomize" class="colour-btn fa fa-refresh" (click)="colour.changeColour()" aria-hidden="true"></i>
       <i title="{{colour.unlockBtnTitle}}" class="colour-btn fa " [ngClass]="{'fa-lock': colour.locked, 'fa-unlock-alt': !colour.locked}" (click)="colour.toggleLock()" aria-hidden="true"></i>
     </span>
-    <colour-sliders [setColour]="colour.hexString" [style.color]="colour.textColour"></colour-sliders>
+    <colour-sliders [setColour]="colour.hexString" [style.color]="colour.textColour" (rgbUpdated)="colour.setColourFromRgb($event)"></colour-sliders>
   </div>
 
-  <span title="Add new colour" class="add-new-btn" (click)="addNew()" (rgbUpdated)="colour.setColourFromRgb($event)">+</span>
+  <span title="Add new colour" class="add-new-btn" (click)="addNew()">+</span>
 </main>
