@@ -19,15 +19,15 @@ describe('Service: Colour', () => {
 
     it ('converts decimal to hexadecimal correctly',
       inject([ColourService], (service: ColourService) => {
-        expect(service.dec2Hex(1)).toBe("01");
-        expect(service.dec2Hex(2)).toBe("02");
-        expect(service.dec2Hex(10)).toBe("0a");
-        expect(service.dec2Hex(15)).toBe("0f");
-        expect(service.dec2Hex(16)).toBe("10");
-        expect(service.dec2Hex(17)).toBe("11");
-        expect(service.dec2Hex(30)).toBe("1e");
-        expect(service.dec2Hex(31)).toBe("1f");
-        expect(service.dec2Hex(32)).toBe("20");
+        expect(service.dec2Hex(1)).toBe('01');
+        expect(service.dec2Hex(2)).toBe('02');
+        expect(service.dec2Hex(10)).toBe('0a');
+        expect(service.dec2Hex(15)).toBe('0f');
+        expect(service.dec2Hex(16)).toBe('10');
+        expect(service.dec2Hex(17)).toBe('11');
+        expect(service.dec2Hex(30)).toBe('1e');
+        expect(service.dec2Hex(31)).toBe('1f');
+        expect(service.dec2Hex(32)).toBe('20');
     }));
 
     describe('rgb2Hex', () => {
@@ -63,9 +63,9 @@ describe('Service: Colour', () => {
 
       it('converts RGB to Hex correctly',
         inject([ColourService], (service: ColourService) => {
-          expect(service.rgb2hex(0, 0, 0)).toBe("#000000");
-          expect(service.rgb2hex(255, 255, 255)).toBe("#ffffff");
-          expect(service.rgb2hex(123, 60, 95)).toBe("#7b3c5f");
+          expect(service.rgb2hex(0, 0, 0)).toBe('#000000');
+          expect(service.rgb2hex(255, 255, 255)).toBe('#ffffff');
+          expect(service.rgb2hex(123, 60, 95)).toBe('#7b3c5f');
       }));
     });
 

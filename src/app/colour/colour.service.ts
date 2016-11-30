@@ -28,7 +28,7 @@ export class ColourService {
 
   dec2Hex(dec): string {
     let hex = dec.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+    return hex.length === 1 ? '0' + hex : hex;
   }
 
   rgb2hex(red: number, green: number, blue: number): string {
