@@ -9,10 +9,10 @@ import { ColourService } from './colour.service';
 })*/
 
 export class ColourComponent {
-  hexString: String;
-  textColour: String;
-  locked: Boolean;
-  unlockBtnTitle: String;
+  hexString: string;
+  textColour: string;
+  locked: boolean;
+  unlockBtnTitle: string;
 
   constructor(private colourService: ColourService) {
     this.hexString = this.colourService.getRandomHex();

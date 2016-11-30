@@ -8,19 +8,19 @@ import { ColourService } from '../colour/colour.service';
 })
 export class ColourSlidersComponent {
 
-  currentHex: String = '';
-  currentRgb: Number[];
+  currentHex: string = '';
+  currentRgb: number[];
 
   @Output() rgbUpdated = new EventEmitter();
 
   @Input()
-  set setColour(colour : String) {
+  set setColour(colour : string) {
     // trims the # off the start
     this.currentHex = colour.substring(1);
     this.currentRgb = this.colourService.hex2rgb(this.currentHex);
   }
 
-  @Input() locked: Boolean;
+  @Input() locked: boolean;
 
   constructor(private colourService: ColourService) { }
 
