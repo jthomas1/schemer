@@ -13,6 +13,7 @@ export class ColourComponent {
   textColour: string;
   locked: boolean;
   unlockBtnTitle: string;
+  slidersVisible: boolean;
 
   constructor(private colourService: ColourService) {
     this.hexString = this.colourService.getRandomHex();
@@ -20,6 +21,11 @@ export class ColourComponent {
     this.locked = false;
     this.unlockBtnTitle = "Lock";
     this.toggleLockTitle();
+    this.slidersVisibile = false;
+  }
+
+  toggleSliders(): void {
+    this.slidersVisible = !this.slidersVisible;
   }
 
   changeColour(event): void {
