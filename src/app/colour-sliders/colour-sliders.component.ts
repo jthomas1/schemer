@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { ColourService } from '../colour/colour.service';
 
 @Component({
@@ -6,45 +6,40 @@ import { ColourService } from '../colour/colour.service';
   templateUrl: './colour-sliders.component.html',
   styleUrls: ['./colour-sliders.component.css']
 })
-export class ColourSlidersComponent implements OnInit {
+export class ColourSlidersComponent {
 
-  currentColour: String = '';
+  currentHex: String = '';
+  currentRgb: Number[];
 
   @Output() rgbUpdated = new EventEmitter();
 
   @Input()
   set setColour(colour : String) {
     // trims the # off the start
-    this.currentColour = colour.substring(1);
+    this.currentHex = colour.substring(1);
+    this.currentRgb = this.colourService.hex2rgb(this.currentHex);
   }
-
-  rgb: Number[];
-
 
   constructor(private colourService: ColourService) { }
 
-  ngOnInit() {
-    this.rgb = this.colourService.hex2rgb(this.currentColour);
-  }
-
   updateR(event): void {
-    this.rgb[0] = parseInt(event.target.value);
+    this.currentRgb[0] = parseInt(event.target.value);
     this.updateRgb();
   }
 
   updateG(event): void {
-    this.rgb[1] = parseInt(event.target.value);
+    this.currentRgb[1] = parseInt(event.target.value);
     this.updateRgb();
   }
 
   updateB(event): void {
-    this.rgb[2] = parseInt(event.target.value);
+    this.currentRgb[2] = parseInt(event.target.value);
     this.updateRgb();
   }
 
   updateRgb(): void {
     this.rgbUpdated.emit({
-      newRgb: this.rgb
+      newRgb: this.currentRgb
     });
   }
 

@@ -1,4 +1,4 @@
-// import { Component, OnInit } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 import { ColourService } from './colour.service';
 
 /*@Component({
@@ -9,6 +9,8 @@ import { ColourService } from './colour.service';
 })*/
 
 export class ColourComponent {
+
+  @Output() hexUpdated = new EventEmitter();
 
   hexString: String;
   textColour: String;
@@ -31,12 +33,16 @@ export class ColourComponent {
     if (!this.locked) {
       this.hexString = this.colourService.getRandomHex();
       this.setTextColour();
+      this.hexUpdated.emit({
+        newColour: this.hexString
+      });
     }
   }
 
   setColourFromRgb(event): void {
     let rgb = event.newRgb;
-    this.hexString = this.colourService.rgb2hex(rgb[0], rgb[1], rgb[2]);;
+    this.hexString = this.colourService.rgb2hex(rgb[0], rgb[1], rgb[2]);
+    this.setTextColour();
   }
 
   setTextColour(): void {
