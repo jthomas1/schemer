@@ -1,17 +1,17 @@
 <ul class="colour-sliders">
     <li class="slider-container">
       <span>R</span>
-      <input type="range" min="0" max="255" step="1" value="{{currentRgb[0]}}" (input)="updateR($event)">
+      <input type="range" min="0" max="255" step="1" value="{{currentRgb[0]}}" [disabled]="locked" (input)="updateR($event)">
       <span class="number-fixed-width">{{currentRgb[0]}}</span>
     </li>
     <li class="slider-container">
       <span>G</span>
-      <input type="range" min="0" max="255" step="1" value="{{currentRgb[1]}}" (input)="updateG($event)">
+      <input type="range" min="0" max="255" step="1" value="{{currentRgb[1]}}" [disabled]="locked" (input)="updateG($event)">
       <span class="number-fixed-width">{{currentRgb[1]}}</span>
     </li>
     <li class="slider-container">
       <span>B</span>
-      <input type="range" min="0" max="255" step="1" value="{{currentRgb[2]}}" (input)="updateB($event)">
+      <input type="range" min="0" max="255" step="1" value="{{currentRgb[2]}}" [disabled]="locked" (input)="updateB($event)">
       <span class="number-fixed-width">{{currentRgb[2]}}</span>
     </li>
 </ul>

@@ -9,9 +9,6 @@ import { ColourService } from './colour.service';
 })*/
 
 export class ColourComponent {
-
-  @Output() hexUpdated = new EventEmitter();
-
   hexString: String;
   textColour: String;
   locked: Boolean;
@@ -25,17 +22,10 @@ export class ColourComponent {
     this.toggleLockTitle();
   }
 
-  hexNoHash(): String {
-    return this.hexString.substring(1);
-  }
-
   changeColour(event): void {
     if (!this.locked) {
       this.hexString = this.colourService.getRandomHex();
       this.setTextColour();
-      this.hexUpdated.emit({
-        newColour: this.hexString
-      });
     }
   }
 

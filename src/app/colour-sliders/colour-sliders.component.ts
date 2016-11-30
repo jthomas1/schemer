@@ -20,6 +20,8 @@ export class ColourSlidersComponent {
     this.currentRgb = this.colourService.hex2rgb(this.currentHex);
   }
 
+  @Input() locked: Boolean;
+
   constructor(private colourService: ColourService) { }
 
   updateR(event): void {
