@@ -10,6 +10,10 @@ export class ColourService {
   }
 
   hex2rgb(hex: string): number[] {
+    if (hex.length === 7 && hex.charAt(0) === '#') {
+        hex = hex.substring(1);
+    }
+
     let rgbHex = [
         hex.slice(0, 2),
         hex.slice(2, 4),
@@ -53,10 +57,6 @@ export class ColourService {
   */
   getBrightness(colour: any): number {
       if (typeof colour === 'string') {
-          if (colour.length === 7 && colour.charAt(0) === '#') {
-              colour = colour.substring(1);
-          }
-
           colour = this.hex2rgb(colour);
       }
       return Math.round(

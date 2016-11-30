@@ -15,6 +15,17 @@ describe('Service: Colour', () => {
       expect(service).toBeTruthy();
     }));
 
+  describe('random number generator', () => {
+    it('does not exceed the minimum or maximum boundaries',
+      inject([ColourService], (service: ColourService) => {
+        for (let i = 0; i < 50; i++) {
+          let random = service.getRandom(1, 3)
+          expect(random).toBeLessThan(3);
+          expect(random).toBeGreaterThan(0);
+        }
+      }));
+  });
+
   describe('Conversions:', () => {
 
     it ('converts decimal to hexadecimal correctly',
@@ -60,6 +71,24 @@ describe('Service: Colour', () => {
         inject([ColourService], (service: ColourService) => {
           expect( () => service.rgb2hex(1, 0, -110)).toThrow();
       }));
+
+      describe('hex2rgb', () => {
+        it('accepts a hex code with the # character',
+          inject([ColourService], (service: ColourService) => {
+            let result = service.hex2rgb("#000102");
+            expect(result[0]).toBe(0);
+            expect(result[1]).toBe(1);
+            expect(result[2]).toBe(2);
+        }));
+
+        it('accepts a hex code without the # character',
+          inject([ColourService], (service: ColourService) => {
+            let result = service.hex2rgb("050403");
+            expect(result[0]).toBe(5);
+            expect(result[1]).toBe(4);
+            expect(result[2]).toBe(3);
+        }));
+      });
 
       it('converts RGB to Hex correctly',
         inject([ColourService], (service: ColourService) => {
