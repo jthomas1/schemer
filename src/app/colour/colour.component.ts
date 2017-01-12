@@ -21,7 +21,15 @@ export class ColourComponent {
     this.locked = false;
     this.unlockBtnTitle = "Lock";
     this.toggleLockTitle();
-    this.slidersVisibile = false;
+    this.slidersVisible = false;
+  }
+
+  dragStart(event): void {
+    console.log('drag!', event);
+  }
+
+  dragEnd(event): void {
+    console.log('drag stop!', event);
   }
 
   toggleSliders(): void {

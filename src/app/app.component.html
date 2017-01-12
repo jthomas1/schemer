@@ -1,15 +1,55 @@
 <main>
-  <div *ngFor="let colour of colours" class="colour-container" [style.background-color]="colour.hexString">
-    <p class="colour-code" [style.color]="colour.textColour">
+  <div
+    *ngFor="let colour of colours"
+    class="colour-container"
+    [style.background-color]="colour.hexString">
+    <p
+      class="colour-code"
+      [style.color]="colour.textColour">
       {{colour.hexString}}
     </p>
-    <span class="change-colour-btn"  [style.color]="colour.textColour">
-      <i title="Randomize" class="colour-btn fa fa-refresh" (click)="colour.changeColour()" aria-hidden="true"></i>
-      <i title="{{colour.unlockBtnTitle}}" class="colour-btn fa " [ngClass]="{'fa-lock': colour.locked, 'fa-unlock-alt': !colour.locked}" (click)="colour.toggleLock()" aria-hidden="true"></i>
-      <i title="Edit" class="colour-btn fa fa-sliders" (click)="colour.toggleSliders()"></i>
+    <span
+      class="change-colour-btn"
+      [style.color]="colour.textColour">
+      <i
+        title="Randomize"
+        class="colour-btn fa fa-refresh"
+        (click)="colour.changeColour()"
+        aria-hidden="true">
+      </i>
+      <i
+        title="{{colour.unlockBtnTitle}}"
+        class="colour-btn fa "
+        [ngClass]="{'fa-lock': colour.locked, 'fa-unlock-alt': !colour.locked}"
+        (click)="colour.toggleLock()"
+        aria-hidden="true">
+      </i>
+      <i
+        title="Edit"
+        class="colour-btn fa fa-sliders"
+        (click)="colour.toggleSliders()">
+      </i>
     </span>
-    <colour-sliders [ngClass]="{'hide': !colour.slidersVisible }" [locked]="colour.locked" [setColour]="colour.hexString" [style.color]="colour.textColour" (rgbUpdated)="colour.setColourFromRgb($event)"></colour-sliders>
+    <colour-sliders
+      [ngClass]="{'hide': !colour.slidersVisible }"
+      [locked]="colour.locked"
+      [setColour]="colour.hexString"
+      [style.color]="colour.textColour"
+      (rgbUpdated)="colour.setColourFromRgb($event)">
+    </colour-sliders>
+    <i
+      title="Move"
+      class="colour-btn fa fa-arrows"
+      [style.color]="colour.textColour"
+      (dragStart)="colour.dragStart($event)"
+      (dragEnd)="colour.dragEnd($event)">
+    </i>
   </div>
 
-  <span title="Add new colour" class="add-new-btn" (click)="addNew()">+</span>
+  <span
+    title="Add new colour"
+    class="add-new-btn"
+    (click)="addNew()">
+    +
+  </span>
 </main>

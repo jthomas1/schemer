@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ColourSlidersComponent } from './colour-sliders/colour-sliders.component';
+import { JtDraggableDirective } from './jt-draggable.directive';
 //import { ColourComponent } from './colour/colour.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColourSlidersComponent
+    ColourSlidersComponent,
+    JtDraggableDirective
   ],
   imports: [
     BrowserModule,
